@@ -12,6 +12,7 @@ import java.io.PrintStream;
 import java.util.Scanner;
 
 public class BmiMethods {
+
     public static void main(String[] args) {
         bmiStd();
     }
@@ -76,5 +77,18 @@ public class BmiMethods {
         System.out.println("============================");
         System.out.println("Welcome to my BMI calculator");
         System.out.println("============================");
+    }
+
+    /**
+     * Print the program header for the pro version. Made to be identical to the
+     * example per requirement in Assessment 03 under (1)(5).
+     */
+    private static void printHeaderPro() {
+        System.out.println("^".repeat(63));
+        System.out.println("^ Welcome to:");
+        System.out.println("^    BODY MASS INDEX (BMI) Computation PRO");
+        System.out.println("^               by Mos");
+        System.out.println("^");
+        System.out.println("^".repeat(63));
     }
 }
