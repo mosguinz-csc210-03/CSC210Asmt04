@@ -8,7 +8,6 @@
  * Semester: Fall 2020
  */
 
-import java.io.PrintStream;
 import java.util.Scanner;
 
 public class BmiMethods {
@@ -41,7 +40,7 @@ public class BmiMethods {
 
         /* Scan and store the user's input for height in inches. */
         int heightIn = scan.nextInt();
-        PrintStream printf = System.out.printf("Your height: %d'%d\"", heightFt, heightIn);
+        System.out.printf("Your height: %d'%d\"", heightFt, heightIn);
 
         /* Input prompt for weight. */
         System.out.print("\n\nPlease enter your weight in pounds: ");
