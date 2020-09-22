@@ -17,7 +17,7 @@ public class BmiMethods {
     private static final int LINE_WIDTH = 63;
 
     public static void main(String[] args) {
-        bmiStd();
+        bmiPro();
     }
 
     /**
@@ -58,7 +58,26 @@ public class BmiMethods {
      * See also: https://github.com/mosguinz-csc210-03/CSC210Asmt03/blob/master/src/TableBmi.java
      */
     public static void bmiPro() {
+        printHeaderPro();
 
+        /* Create a Scanner object. */
+        Scanner scan = new Scanner(System.in);
+
+        /* Input prompts for height (in feet and inches, split on first whitespace) */
+        System.out.print("Enter height in feet and inches: ");
+        int height = scan.nextInt() * 12 + scan.nextInt();
+
+        /* Input prompts for min and max weights. */
+        System.out.print("Enter the low weight in pounds: ");
+        double weightMin = scan.nextDouble();
+        System.out.print("Enter the high weight in pounds: ");
+        double weightMax = scan.nextDouble();
+
+        /* Display the table and print termination message. */
+        displayTable(height, weightMax, weightMin);
+        System.out.println('\n' + "^".repeat(LINE_WIDTH));
+        System.out.println("^    Thank you for using my program.");
+        System.out.println("^".repeat(LINE_WIDTH));
     }
 
     /**
