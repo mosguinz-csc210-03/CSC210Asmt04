@@ -30,4 +30,15 @@ public class BmiMethods {
     public static void bmiPro() {
 
     }
+
+    /**
+     * Calculate the BMI from the given weight and height.
+     *
+     * @param weight Weight in pounds.
+     * @param height Height in inches.
+     * @return The BMI value (lbs/in^2).
+     */
+    private static double calculateBMI(double weight, double height) {
+        return 703 * weight / (height * height);
+    }
 }
