@@ -13,6 +13,9 @@ import java.util.Scanner;
 
 public class BmiMethods {
 
+    /* Carat line width for pro version, per ASMT 03 (1)(5) specification. */
+    private static final int LINE_WIDTH = 63;
+
     public static void main(String[] args) {
         bmiStd();
     }
@@ -84,11 +87,11 @@ public class BmiMethods {
      * example per requirement in Assessment 03 under (1)(5).
      */
     private static void printHeaderPro() {
-        System.out.println("^".repeat(63));
+        System.out.println("^".repeat(LINE_WIDTH));
         System.out.println("^ Welcome to:");
         System.out.println("^    BODY MASS INDEX (BMI) Computation PRO");
         System.out.println("^               by Mos");
         System.out.println("^");
-        System.out.println("^".repeat(63));
+        System.out.println("^".repeat(LINE_WIDTH));
     }
 }
