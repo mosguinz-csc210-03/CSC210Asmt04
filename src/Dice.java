@@ -8,6 +8,7 @@
  * Semester: Fall 2020
  */
 
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -23,7 +24,8 @@ public class Dice {
 
     public static void loop() {
         Scanner scan = new Scanner(System.in);
-        int nThrows = promptRolls(scan);
+        int nRolls = promptRolls(scan);
+        displayRollFreq(nRolls);
 
     }
 
@@ -55,7 +57,21 @@ public class Dice {
         return new Random().nextInt(DICE_FACES) + 1;
     }
 
-    private static void displayRollFreq() {
+    private static void displayRollFreq(int nRolls) {
+        int roll, sum = 0;
+        int[] rollCount = new int[DICE_FACES];
 
+        for (int i = 0; i < nRolls; i++) {
+            roll = rollDice();
+            rollCount[roll - 1] += 1;
+            sum += roll;
+
+            System.out.printf("Rolled: %d%n", roll);
+            System.out.println(Arrays.toString(rollCount));
+        }
+
+        double pSum = 0;
+        for (double occurrence : rollCount) pSum += occurrence / nRolls;
+        System.out.printf("Average probability is: %.3f%n", pSum / DICE_FACES);
     }
 }
