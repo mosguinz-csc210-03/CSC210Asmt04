@@ -8,6 +8,7 @@
  * Semester: Fall 2020
  */
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Dice {
@@ -42,5 +43,15 @@ public class Dice {
             t = scan.nextInt();
         } while (t < MIN_THROWS || t > MAX_THROWS);
         return t;
+    }
+
+    /**
+     * Roll the dice. Returns the rolled dice value from 1 to DICE_FACES,
+     * inclusive.
+     *
+     * @return The rolled value.
+     */
+    private static int rollDice() {
+        return new Random().nextInt(DICE_FACES) + 1;
     }
 }
