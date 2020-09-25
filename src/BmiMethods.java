@@ -17,7 +17,10 @@ public class BmiMethods {
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        bmiPro(scan);
+        System.out.print("Please enter 1 for the Standard version or 2 for the Pro version: ");
+        int option = scan.nextInt();
+        if (option == 1) bmiStd(scan);
+        else if (option == 2) bmiPro(scan);
     }
 
     /**
