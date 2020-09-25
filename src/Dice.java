@@ -39,22 +39,22 @@ public class Dice {
      * bounds (MIN_ROLLS <= t <= MAX_ROLLS) or a sentinel value (0).
      *
      * @param scan The `Scanner` object to use.
-     * @return The valid number of throws or -1 if the user terminates the
+     * @return The valid number of rolls or -1 if the user terminates the
      * program.
      */
     private static int promptRolls(Scanner scan) {
-        int t;
+        int rolls;
         do {
             System.out.printf("Enter the number of throws between %,d to %,d inclusive.%n", MIN_ROLLS, MAX_ROLLS);
             System.out.print("Or enter 0 to quit: ");
-            t = scan.nextInt();
+            rolls = scan.nextInt();
 
-            if (t == 0) {
+            if (rolls == 0) {
                 System.out.println("Thank you for playing my Dice Probability Program");
                 return -1;
             }
-        } while (t < MIN_ROLLS || t > MAX_ROLLS);
-        return t;
+        } while (rolls < MIN_ROLLS || rolls > MAX_ROLLS);
+        return rolls;
     }
 
     /**
