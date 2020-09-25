@@ -74,14 +74,13 @@ public class Dice {
      * @param nRolls The number of rolls.
      */
     private static void displayRollFreq(int nRolls) {
-        int roll, sum = 0;
+        int roll;
         int[] rollCount = new int[DICE_FACES];
 
         /* Roll the dice `nRolls` times and keep track of each occurrences. */
         for (int i = 0; i < nRolls; i++) {
             roll = rollDice();
             rollCount[roll - 1] += 1;
-            sum += roll;
 
             System.out.printf("Rolled: %d%n", roll);
             System.out.println(Arrays.toString(rollCount));
