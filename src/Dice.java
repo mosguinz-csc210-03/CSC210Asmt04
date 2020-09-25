@@ -28,6 +28,7 @@ public class Dice {
     public static void loop() {
         Scanner scan = new Scanner(System.in);
         int nRolls = promptRolls(scan);
+        if (nRolls == -1) return;
         displayRollFreq(nRolls);
 
     }
@@ -35,10 +36,11 @@ public class Dice {
     /**
      * Prompt the user to enter number of throws they would like to perform. The
      * prompt will continue until the user enters a value within the valid
-     * bounds (MIN_ROLLS <= t <= MAX_ROLLS).
+     * bounds (MIN_ROLLS <= t <= MAX_ROLLS) or a sentinel value (0).
      *
      * @param scan The `Scanner` object to use.
-     * @return The valid number of throws.
+     * @return The valid number of throws or -1 if the user terminates the
+     * program.
      */
     private static int promptRolls(Scanner scan) {
         int t;
@@ -46,6 +48,11 @@ public class Dice {
             System.out.printf("Enter the number of throws between %,d to %,d inclusive.%n", MIN_ROLLS, MAX_ROLLS);
             System.out.print("Or enter 0 to quit: ");
             t = scan.nextInt();
+
+            if (t == 0) {
+                System.out.println("Thank you for playing my Dice Probability Program");
+                return -1;
+            }
         } while (t < MIN_ROLLS || t > MAX_ROLLS);
         return t;
     }
