@@ -16,19 +16,19 @@ public class BmiMethods {
     private static final int LINE_WIDTH = 63;
 
     public static void main(String[] args) {
-        bmiPro();
+        Scanner scan = new Scanner(System.in);
+        bmiPro(scan);
     }
 
     /**
      * Contains execution loop for the standard BMI calculator.
      * <p>
      * See also: https://github.com/mosguinz-csc210-03/CSC210Asmt01/blob/master/src/BMI.java
+     *
+     * @param scan The `Scanner` object to use.
      */
-    public static void bmiStd() {
+    public static void bmiStd(Scanner scan) {
         printHeaderStd();
-
-        /* Create a Scanner object. */
-        Scanner scan = new Scanner(System.in);
 
         /* Input prompts for height (in feet and inches, separately). */
         System.out.println("Please enter your height in feet and inches (press Enter after each number)");
@@ -55,12 +55,11 @@ public class BmiMethods {
      * Contains execution loop for the BMI table calculator.
      * <p>
      * See also: https://github.com/mosguinz-csc210-03/CSC210Asmt03/blob/master/src/TableBmi.java
+     *
+     * @param scan The `Scanner` object to use.
      */
-    public static void bmiPro() {
+    public static void bmiPro(Scanner scan) {
         printHeaderPro();
-
-        /* Create a Scanner object. */
-        Scanner scan = new Scanner(System.in);
 
         /* Input prompts for height (in feet and inches, split on first whitespace) */
         System.out.print("Enter height in feet and inches: ");
