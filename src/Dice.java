@@ -22,6 +22,9 @@ public class Dice {
         loop();
     }
 
+    /**
+     * Run the execution loop.
+     */
     public static void loop() {
         Scanner scan = new Scanner(System.in);
         int nRolls = promptRolls(scan);
@@ -57,10 +60,24 @@ public class Dice {
         return new Random().nextInt(DICE_FACES) + 1;
     }
 
+    /**
+     * Display the roll frequency for each faces of a dice, given the number of
+     * rolls.
+     * <p>
+     * For each roll, the method will print the roll result and the cumulative
+     * occurrences of all faces.
+     * <p>
+     * At the end, it will display the "average probability" of each face. With
+     * the sufficient number of given rolls, this value should be roughly
+     * equivalent to 1 / DICE_FACES.
+     *
+     * @param nRolls The number of rolls.
+     */
     private static void displayRollFreq(int nRolls) {
         int roll, sum = 0;
         int[] rollCount = new int[DICE_FACES];
 
+        /* Roll the dice `nRolls` times and keep track of each occurrences. */
         for (int i = 0; i < nRolls; i++) {
             roll = rollDice();
             rollCount[roll - 1] += 1;
@@ -70,8 +87,11 @@ public class Dice {
             System.out.println(Arrays.toString(rollCount));
         }
 
+        /* Sum up the probability of each value occurrence. */
         double pSum = 0;
         for (double occurrence : rollCount) pSum += occurrence / nRolls;
+
+        /* Then divide the sum by the number of faces to get the mean value. */
         System.out.printf("Average probability is: %.3f%n", pSum / DICE_FACES);
     }
 }
